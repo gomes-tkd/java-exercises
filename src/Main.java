@@ -48,7 +48,6 @@ public class Main {
             }
 
             for (Integer integer : arr) {
-                // dependendo da quantidade de números to pegando as vezes uma casa a menos que o segundo menor
                 if (!Objects.equals(integer, value) && integer < maiorNumero && integer > menorNumero) {
                     menorNumero = integer;
                 }
