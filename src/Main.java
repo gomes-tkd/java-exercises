@@ -4,26 +4,34 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Locale.setDefault(Locale.CANADA);
         Scanner sc = new Scanner(System.in);
 
         Integer[] arr;
-        Integer maiorNumero = 0;
-        Integer menorNumero = 0;
+        Integer segundoMaiorValor = 0;
+        Integer size = 0;
 
-        System.out.print("Enter with the length value: ");
-        int tam = sc.nextInt();
-        arr = new Integer[tam];
+        do {
+            System.out.print("Enter with the length value: ");
+            size = sc.nextInt();
 
-        preencherArray(arr, tam);
+            if (size < 2) {
+                System.out.println("Enter a value greater than or equal to 2.");
+            }
 
+        } while (size < 2);
+
+        arr = new Integer[size];
+
+        preencherArray(arr, size);
+        segundoMaiorValor = encontrarSegundoMaior(arr);
         for (Integer n : arr) {
             System.out.print(n + " ");
         }
         System.out.println();
-
-        System.out.println("2nd bigger: " + encontrarSegundoMaior(arr, maiorNumero, menorNumero));
+        System.out.println("2nd bigger: " + segundoMaiorValor);
 
         sc.close();
 
@@ -37,24 +45,19 @@ public class Main {
         }
     }
 
-    public static Integer encontrarSegundoMaior(Integer[] arr, Integer maiorNumero, Integer menorNumero) {
-        if (arr.length <= 1) {
-            throw new Error("Invalid array length. Please enter a length bigger than 1.");
+    public static Integer encontrarSegundoMaior(Integer[] arr) {
+        Integer maiorNumero = Integer.MIN_VALUE;
+        Integer segundoMaiorNumero = Integer.MIN_VALUE;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > maiorNumero) {
+                segundoMaiorNumero = maiorNumero;
+                maiorNumero = arr[i];
+            } else if (arr[i] > segundoMaiorNumero && arr[i] != maiorNumero) {
+                segundoMaiorNumero = arr[i];
+            }
         }
 
-        for (Integer value : arr) {
-            if (value > maiorNumero) {
-                maiorNumero = value;
-            }
-
-            for (Integer integer : arr) {
-                if (!Objects.equals(integer, value) && integer < maiorNumero && integer > menorNumero) {
-                    menorNumero = integer;
-                }
-            }
-
-        }
-
-        return menorNumero;
+        return segundoMaiorNumero;
     }
 }
