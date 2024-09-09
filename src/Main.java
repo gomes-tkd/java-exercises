@@ -9,6 +9,15 @@ public class Main {
         Locale.setDefault(Locale.CANADA);
         Scanner sc = new Scanner(System.in);
 
+        caso2();
+
+        sc.close();
+
+    }
+
+    // Atividade 1: Achar o segundo maior valor de um array
+
+    public static void atividade1(Scanner sc) {
         Integer[] arr;
         Integer segundoMaiorValor = 0;
         Integer size = 0;
@@ -32,9 +41,6 @@ public class Main {
         }
         System.out.println();
         System.out.println("2nd bigger: " + segundoMaiorValor);
-
-        sc.close();
-
     }
 
     public static void preencherArray(Integer[] arr, Integer tam) {
@@ -60,4 +66,40 @@ public class Main {
 
         return segundoMaiorNumero;
     }
+
+    // Atividade 2: impressão
+    // Caso 1: | Caso 2: | caso 3:  | caso 4:
+    // 1       | 1       |   12345  | xxxxx
+    // 12      | 22      |    1234  | x   x
+    // 123     | 333     |   123    | x   x
+    // 1234    | 4444    |    12    | x   x
+    // 12345   | 55555   |    1     | xxxxx
+
+    public static void atividade2(Scanner sc) {}
+
+    // não consegui imprimir invertido
+    public static void caso1() {
+        for (int i = 4; i >= 0; i--) {
+            for (int j = 5 - i; j >= 1; j--) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+
+    // to no caminho certo - acredito
+    public static void caso2() {
+        for (int i = 4; i >= 0; i--) {
+            for (int j = 5 - i; j >= 1; j--) {
+                System.out.print(i);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void caso3() {}
+
+    public static void caso4() {}
+
+    // Atividade 3
 }
