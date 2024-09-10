@@ -10,8 +10,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         
         // atividade1(sc);
-        caso1();
-        caso2();
+        caso3();
         sc.close();
 
     }
@@ -77,7 +76,7 @@ public class Main {
     // 12345   | 55555   |    1     | xxxxx
 
     public static void atividade2(Scanner sc) {}
-
+    
     // Impressão done
     public static void caso1() {
         for (int i = 1; i <= 5; i++) {
@@ -98,8 +97,15 @@ public class Main {
         }
     }
 
-    public static void caso3() {}
-
+    // Impressão done
+    public static void caso3() {
+        for (int i = 5; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
     public static void caso4() {}
 
     // Atividade 3
