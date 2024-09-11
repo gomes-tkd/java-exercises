@@ -1,5 +1,4 @@
 import java.util.Locale;
-import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,7 +9,14 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         
         // atividade1(sc);
+        System.out.println("\nCaso 1");
+        caso1();
+        System.out.println("\nCaso 2");
+        caso2();
+        System.out.println("\nCaso 3");
         caso3();
+        System.out.println("\nCaso 4");
+        caso4();
         sc.close();
 
     }
@@ -92,7 +98,7 @@ public class Main {
         for (int i = 1; i <= 5; i++) {
             for (int j = 1; j <= i; j++) {
                 System.out.print(i);
-            }
+            } 
             System.out.println();
         }
     }
@@ -106,7 +112,21 @@ public class Main {
             System.out.println();
         }
     }
-    public static void caso4() {}
+
+    public static void caso4() {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+               if (i == 0 || i == 4) {
+                System.out.print("x");
+               } else if (j == 0 || j == 4){
+                System.out.print("x");
+               } else {
+                System.out.print(" ");
+               }
+            }
+            System.out.println();
+        }
+    }
 
     // Atividade 3
 }
