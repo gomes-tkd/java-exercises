@@ -9,14 +9,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         
         // atividade1(sc);
-        System.out.println("\nCaso 1");
-        caso1();
-        System.out.println("\nCaso 2");
-        caso2();
-        System.out.println("\nCaso 3");
-        caso3();
-        System.out.println("\nCaso 4");
-        caso4();
+        atividade2(sc);
         sc.close();
 
     }
@@ -81,11 +74,47 @@ public class Main {
     // 1234    | 4444    |    12    | x   x
     // 12345   | 55555   |    1     | xxxxx
 
-    public static void atividade2(Scanner sc) {}
+    public static void atividade2(Scanner sc) {
+        System.out.print("Enter a value: ");
+        int value = sc.nextInt();
+        System.out.println("Choose a case to print");
+        System.out.println("Case 1: | Case 2: | case 3:  | case 4:");
+        System.out.println("1       | 1       |   12345  | xxxxx");
+        System.out.println("12      | 22      |   1234   | x   x");
+        System.out.println("123     | 333     |   123    | x   x");
+        System.out.println("1234    | 4444    |   12     | x   x");
+        System.out.println("12345   | 55555   |   1      | xxxxx");
+        System.out.print("Option: ");
+        int opt = sc.nextInt();
+        System.out.println();
+
+        switch (opt) {
+            case 1:
+                System.out.println("Case 1");
+                caso1(value);
+                break;
+            case 2:
+                System.out.println("Case 2");
+                caso2(value);
+                break;
+            case 3:
+                System.out.println("Case 3");
+                caso3(value);
+                break;
+            case 4:
+                System.out.println("Case 4");
+                caso4(value);
+                break;
+            default:
+            System.out.println("Invalid case. ");
+                break;
+        }
+
+    }
     
     // Impressão done
-    public static void caso1() {
-        for (int i = 1; i <= 5; i++) {
+    public static void caso1(int value) {
+        for (int i = 1; i <= value; i++) {
             for (int j = 1; j <= i; j++) {
                 System.out.print(j);
             }
@@ -94,8 +123,8 @@ public class Main {
     }
 
     // impressão done
-    public static void caso2() {
-        for (int i = 1; i <= 5; i++) {
+    public static void caso2(int value) {
+        for (int i = 1; i <= value; i++) {
             for (int j = 1; j <= i; j++) {
                 System.out.print(i);
             } 
@@ -104,8 +133,8 @@ public class Main {
     }
 
     // Impressão done
-    public static void caso3() {
-        for (int i = 5; i >= 1; i--) {
+    public static void caso3(int value) {
+        for (int i = value; i >= 1; i--) {
             for (int j = 1; j <= i; j++) {
                 System.out.print(j);
             }
@@ -113,12 +142,12 @@ public class Main {
         }
     }
 
-    public static void caso4() {
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-               if (i == 0 || i == 4) {
+    public static void caso4(int value) {
+        for (int i = 0; i < value; i++) {
+            for (int j = 0; j < value; j++) {
+               if (i == 0 || i == (value - 1)) {
                 System.out.print("x");
-               } else if (j == 0 || j == 4){
+               } else if (j == 0 || j == (value - 1)){
                 System.out.print("x");
                } else {
                 System.out.print(" ");
